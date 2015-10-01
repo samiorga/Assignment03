@@ -11,7 +11,7 @@ import becker.robots.Wall;
  */
 /**
  *
- * @author iorgs3184
+ * @author iorgs3184 
  */
 public class A3Q1 {
 
