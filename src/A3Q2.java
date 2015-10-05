@@ -50,17 +50,43 @@ public class A3Q2 {
 
         while (true) {
 
+            karel.move();
 
-            while (karel.frontIsClear()) {
+            if (karel.canPickThing()) {
+                karel.pickThing();
+            }
+
+            while (karel.frontIsClear() && karel.getAvenue() != 1) {
                 if (karel.canPickThing()) {
                     karel.pickThing();
                 }
                 karel.move();
 
+            }
+            if (karel.canPickThing()) {
+                karel.pickThing();
+            }
+            if (!karel.frontIsClear() && karel.getAvenue() != 1) {
+                karel.turnLeft();
+                karel.turnLeft();
+            }
+            if (karel.canPickThing()) {
+                karel.pickThing();
+            }
+            if (!karel.frontIsClear() && karel.getAvenue() == 1) {
+                karel.turnLeft();
+
+                if (karel.frontIsClear()) {
+                    karel.move();
+                    karel.turnLeft();
+                } else {
+                    karel.turnLeft();
+                    karel.turnLeft();
+                }
 
             }
-            for (int turnRight = 2; turnRight > 0; turnRight = turnRight - 1) {
-                karel.turnLeft();
+            if (karel.getAvenue() == 1 && karel.getStreet() == 1 && karel.getDirection() == Direction.EAST) {
+                break;
             }
         }
     }
