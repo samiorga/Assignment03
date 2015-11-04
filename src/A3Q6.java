@@ -58,6 +58,21 @@ public class A3Q6 {
         //new robot to live in City
         Robot karel = new Robot(kw, 3, 3, Direction.SOUTH);
         
+        
+        for (int moveAround = 4; moveAround > 0; moveAround = moveAround - 1) {
+        
+        
+        for (int moveCount = 2; moveCount > 0; moveCount = moveCount - 1) {
+                karel.move();
+                karel.move();
+                karel.move();
+                karel.turnLeft();
+        }
+        
+        
+        }
+        
+        /*
         //karel moves around everything twice
         for (int moveWhole = 2; moveWhole > 0; moveWhole = moveWhole - 1) {
             //karel moves around first box
@@ -87,6 +102,6 @@ public class A3Q6 {
                     karel.move();
                 }
             }
-        }
+        } */
     }
 }
